@@ -10,6 +10,9 @@ for day in range(1, 26):
 		with open(python_file, "w") as file:
 			file.write(f"""# Day {day}
 
+import re
+import numpy as np
+
 #with open("day{day:02}_input copy.txt") as file:
 with open("day{day:02}_input.txt") as file:
 	text = file.read().splitlines()
