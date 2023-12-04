@@ -7,11 +7,10 @@ import numpy as np
 with open("day04_input.txt") as file:
 	text = file.read().splitlines()
 
-point_scale = [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+card_scores = {}
+num_cards = {}
 
-point_sum = 0
-
-for line in text:
+for i, line in enumerate(text):
 	nums = line.split(":")[1]
 	win_text, num_text = nums.split("|")
 
@@ -22,8 +21,15 @@ for line in text:
 	for num in nums:
 		if num in win_nums:
 			correct_nums += 1
-	point_sum += point_scale[correct_nums]
+	card_scores[i + 1] = correct_nums
+	num_cards[i + 1] = 1
 
+for i in range(1, len(card_scores) + 1):
+	card_num = num_cards[i]
 
-print(point_sum)
-	
+	for j in range(1, card_scores[i] + 1):
+		num_cards[i + j] += card_num
+
+# print(num_cards)
+print(sum(num_cards.values()))
+
