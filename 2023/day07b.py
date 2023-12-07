@@ -4,7 +4,7 @@ import re
 import numpy as np
 from operator import countOf
 
-vals = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]
+vals = ["A", "K", "Q", "T", "9", "8", "7", "6", "5", "4", "3", "2", "J"]
 
 def compare_hands(hand1, hand2):
 	rank1 = get_rank(hand1)
@@ -31,17 +31,34 @@ def is_higher(hand, other):
 
 def get_rank(hand):
 	sorted = sort_letters(hand)
+
 	if is_fiver(sorted):
 		return 6
 	elif is_fourer(sorted):
+		if "J" in sorted: #make 5
+			return 6
 		return 5
 	elif is_house(sorted):
+		if "J" in sorted: #make 5
+			return 6
 		return 4
 	elif is_threeer(sorted):
+		if "J" in sorted: #make 4
+			return 5
 		return 3
 	elif is_two_pair(sorted):
+		if "J" in sorted:
+			if sorted["J"] == 2: 
+				return 5 #make 4
+			else: 
+				return 4 #make house
 		return 2
 	elif is_one_pair(sorted):
+		if "J" in sorted: #make 3
+			return 3
+		return 1
+
+	if "J" in sorted: #make pair
 		return 1
 	return 0
 
