@@ -21,14 +21,6 @@ def get_steps(graph, current_node, turns):
 		if current_node[-1] == "Z":
 			return current_steps		
 
-def lcm(a, b):
-	return a * b // math.gcd(a, b)
-
-def massive_lcm(some_list):
-	if len(some_list) == 2:
-		return lcm(some_list[0], some_list[1])
-	return lcm(some_list[0], massive_lcm(some_list[1:]))
-
 
 graph = {}
 turns = text[0]
@@ -40,5 +32,16 @@ nodes = list(filter(lambda node: node[-1] == "A", graph.keys()))
 i = 0
 
 steps = [get_steps(graph, node, turns) for node in nodes]
+# ye for the answer I just slapped those in some LCM calculator
+# ---------------------------
+
+def lcm(a, b):
+	return a * b // math.gcd(a, b)
+
+def massive_lcm(some_list):
+	if len(some_list) == 2:
+		return lcm(some_list[0], some_list[1])
+	return lcm(some_list[0], massive_lcm(some_list[1:]))
+
 print(massive_lcm(steps))
 

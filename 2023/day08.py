@@ -20,5 +20,6 @@ while(True):
 	node = graph[node][turns[i % len(turns)]]
 	i += 1
 	if node == "ZZZ":
-		print(i)
 		break
+
+print(i)
