@@ -4,11 +4,11 @@ import re
 import numpy as np
 
 
-def get_next(row):
+def get_prev(row):
 	diffs = [row[i + 1] -row[i] for i in range(len(row) - 1)]
 	if all(i == 0 for i in diffs):
 		return row[-1]
-	return row[-1] + get_next(diffs)
+	return row[0] - get_prev(diffs)
 
 
 
@@ -18,8 +18,6 @@ with open("day09_input.txt") as file:
 
 sums = 0
 for i, line in enumerate(text):
-	print(line)
 	row = [int(s) for s in line.split()]
-	sums += get_next(row)
-
+	sums += get_prev(row)
 print(sums)
