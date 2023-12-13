@@ -1,8 +1,5 @@
 # Day 13
 
-import re
-import numpy as np
-
 # with open("day13_input copy.txt") as file:
 with open("day13_input.txt") as file:
 	text = file.read().splitlines()
@@ -21,21 +18,34 @@ for i, line in enumerate(text):
 		continue
 	rows.append(line)
 
+def diffs(s1, s2):
+	diffs = 0
+	for i in range(len(s1)):
+		if s1[i] != s2[i]:
+			diffs += 1
+	return diffs
+
 def get_mirror_i(pattern):
 	mirror_i = -1
 	size = len(pattern)
 
-	for start in range(0, size - 1):
-		is_mirror = True
+	for start in range(size - 1):
 		max_delta = min(start + 1, size - 1 - start)
+		is_mirror = True
+		has_smudge = False
 
 		for delta in range(max_delta):
-			if pattern[start - delta] != pattern[start + 1 + delta]:
+			diff = diffs(pattern[start - delta], pattern[start + 1 + delta])
+			if diff > 1 or (diff == 1 and has_smudge):
 				is_mirror = False
 				break
-		if is_mirror:
+			if diff == 1:
+				has_smudge = True
+
+		if is_mirror and has_smudge:
 			mirror_i = start
 			break
+
 	return mirror_i
 
 sums = 0
@@ -51,7 +61,6 @@ for i in range(len(pattern_cols)):
 		continue
 
 	mirror_x = get_mirror_i(cols)
-	
 	if mirror_x != -1:
 		sums += mirror_x + 1
 	else:
