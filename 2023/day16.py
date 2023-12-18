@@ -57,7 +57,7 @@ def is_in_grid(coord):
 
 
 rays = [[np.array([-1, 0]), np.array([1, 0])]]
-energized = []
+energized = set()
 
 while(len(rays) > 0):
 	ray = rays.pop()
@@ -75,22 +75,16 @@ while(len(rays) > 0):
 			break
 		beamed_dirs[next[0]][next[1]].append(tuple(ray[1]))
 
-		# print("mkey")
-		if tuple(next) not in energized:
-			energized.append(tuple(next))
+		energized.add(tuple(next))
 		letter = grid[next[0], next[1]]
 
-		# print("aha")
 
 		if letter in splitters:
-			# print("split", get_splits(ray[1], letter))
 			for redir in get_splits(ray[1], letter):
 				rays.append([next, redir])
 			break
 		elif letter in redirects:
-			# print("redirect")
 			ray[1] = get_redirect(ray[1], letter)
-		# print("now what?")
 
 for e in energized:
 	grid[e[0], e[1]] = "#"

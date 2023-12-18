@@ -67,7 +67,7 @@ def get_energy(start_ray):
 	start = np.copy(start_ray[0])
 	beamed_dirs = [[[] for y in range(h)] for x in range(w)]
 	rays = [start_ray]
-	energized = []
+	energized = set()
 
 	while(len(rays) > 0):
 		ray = rays.pop()
@@ -84,8 +84,7 @@ def get_energy(start_ray):
 				break
 			beamed_dirs[next[0]][next[1]].append(tuple(ray[1]))
 
-			if tuple(next) not in energized:
-				energized.append(tuple(next))
+			energized.add(tuple(next))
 			letter = grid[next[0], next[1]]
 
 			if letter in splitters:
