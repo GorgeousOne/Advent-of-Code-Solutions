@@ -78,7 +78,6 @@ for i, y in enumerate(y_steps[:-1]):
 				inside = not inside
 				hit_min = False
 				hit_max = False
-				bay_area += (new_intersect - last_intersect)
 			else:
 				hit_min = True
 				hit_max = False
@@ -87,7 +86,6 @@ for i, y in enumerate(y_steps[:-1]):
 				inside = not inside
 				hit_min = False
 				hit_max = False
-				bay_area += (new_intersect - last_intersect)
 			else:
 				hit_min = False
 				hit_max = True
