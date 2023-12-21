@@ -43,12 +43,12 @@ class Conjunction(Module):
 	def __init__(self, name, outputs) -> None:
 		super().__init__(name, outputs)
 		self.input_states = {}
+		self.state = False
 
 	def trigger(self, input, high_pulse):
 		self.input_states[input] = high_pulse
-		is_high = all(self.input_states.values())
-		# print("   ", self.name, is_high)
-		return [[self.name, o, not is_high] for o in self.outputs]
+		self.state = all(self.input_states.values())
+		return [[self.name, o, not self.state] for o in self.outputs]
 
 	def __repr__(self):
 		return f"&{self.name} -> {', '.join(self.outputs)}"
@@ -77,26 +77,20 @@ for module in modules.values():
 
 print(modules)
 
-high_ps = 0
-low_ps = 0
-
-for i in range(1000):
+for i in range(1, 10000):
 	queue = [["button", "broadcaster", False]]
-	low_ps += 1
+	pulses = 0
 
 	while(len(queue) > 0):
 		pulse = queue.pop(0)
+
 		if pulse[1] not in modules:
 			continue
 
+		if pulse[1] in ["xp", "ln", "gp", "xl"] and not pulse[2]:
+			print(i, pulse[1])
+
 		outputs = modules[pulse[1]].trigger(pulse[0], pulse[2])
-		
-		for o in outputs:
-			if o[2]:
-				high_ps += 1
-			else:
-				low_ps += 1
 		queue.extend(outputs)
 
-print(low_ps, high_ps)
-print(low_ps * high_ps)
+# your mom now take the lowest loop of those 4 nodes and lcm sync the shit out of them
