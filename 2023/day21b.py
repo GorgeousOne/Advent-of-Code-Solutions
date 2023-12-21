@@ -29,36 +29,32 @@ def wrap_pos(pos, max_x, max_y):
 	return (pos[0] % max_x, pos[1] % max_y)
 
 final_reach = set()
-all_reached = set()
-last_reached = set()
 
-final_reach.add(start)
-all_reached.add(start)
-last_reached.add(start)
+print(w, h)
 
-steps = 1000
+steps = 26501365
 
-for i in range(1, steps + 1):
-	next_reached = set()
+square_reach = (steps - 65) // w
 
-	for point in last_reached:
-		loc = np.array(point)
+n = square_reach - 1
+fulls = (n * (n + 1) * (2 * n + 1)) // 6
+# print(fulls)
 
-		for dir in dirs:
-			next = tuple(loc + dir)
+all_count = np.count_nonzero(garden)
 
-			if garden[next[0], next[1]] == 1:
-				continue
-			
-			if next in all_reached:
-				continue
+counts1 = 0
+counts2 = 0
+counts3 = 0
+counts4 = 0
+for x in range(65):
+	for y in range(65 - x):
+		if garden[x, y] == 1:
+			counts1 += 1
+		if garden[w - 1 - x, y] == 1:
+			counts2 += 1
+		if garden[w - 1 - x, h - 1 - y] == 1:
+			counts3 += 1
+		if garden[x, h - 1 - y] == 1:
+			counts4 += 1
 
-			next_reached.add(next)
-			all_reached.add(next)
-
-			if i % 2 == 0:
-				final_reach.add(next)
-
-	last_reached = next_reached
-
-print(len(final_reach))
+print(counts1, counts2, counts3, counts4)
