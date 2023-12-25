@@ -1,5 +1,7 @@
 # puzzle inputs
 *.txt
+*.png
+*.dot
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

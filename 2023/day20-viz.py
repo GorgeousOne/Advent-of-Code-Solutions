@@ -42,7 +42,7 @@ for i, line in enumerate(text):
 		graph.node(name, input, color="blue", pos=f"{i},{i}!")
 		colors[name] = "blue"
 		outps[name] = outputs
-	
+
 for key, vals in outps.items():
 	for o in vals:
 		graph.edge(key, o, "", color=colors[key])
