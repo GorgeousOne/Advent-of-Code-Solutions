@@ -1,4 +1,4 @@
-# Day 1
+# https://adventofcode.com/2023/day/1
 import re
 import copy
 
@@ -35,7 +35,7 @@ for i, line in enumerate(text2):
 			idx = onematch.start()
 			line2 = line2[:idx] + str(val) + line2[idx + 1:]
 	text2[i] = line2
-	
+
 
 sums2 = 0
 for i, line in enumerate(text2):

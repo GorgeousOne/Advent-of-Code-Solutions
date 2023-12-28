@@ -1,4 +1,4 @@
-# Day 12
+# https://adventofcode.com/2023/day/12
 
 import re
 import numpy as np
@@ -35,7 +35,7 @@ def get_pattern_num(row, pattern, indent=0):
 		return 0
 	next = pattern[0]
 	sums = 0
-	
+
 	min_chars = sum(pattern) + len(pattern) - 1
 	last_width = len(row) - min_chars + 1
 

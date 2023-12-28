@@ -1,4 +1,4 @@
-# Day 13
+# https://adventofcode.com/2023/day/13
 
 import re
 import numpy as np
@@ -51,11 +51,11 @@ for i in range(len(pattern_cols)):
 		continue
 
 	mirror_x = get_mirror_i(cols)
-	
+
 	if mirror_x != -1:
 		sums += mirror_x + 1
 	else:
 		print("meh", i)
-	
+
 print(sums)
 

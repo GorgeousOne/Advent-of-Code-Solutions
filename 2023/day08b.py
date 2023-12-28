@@ -1,4 +1,4 @@
-# Day 8
+# https://adventofcode.com/2023/day/8
 
 import re
 import numpy as np
@@ -19,7 +19,7 @@ def get_steps(graph, current_node, turns):
 		current_steps += 1
 
 		if current_node[-1] == "Z":
-			return current_steps		
+			return current_steps
 
 
 graph = {}

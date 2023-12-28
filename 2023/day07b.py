@@ -1,4 +1,4 @@
-# Day 7
+# https://adventofcode.com/2023/day/7
 
 import re
 import numpy as np
@@ -48,9 +48,9 @@ def get_rank(hand):
 		return 3
 	elif is_two_pair(sorted):
 		if "J" in sorted:
-			if sorted["J"] == 2: 
+			if sorted["J"] == 2:
 				return 5 #make 4
-			else: 
+			else:
 				return 4 #make house
 		return 2
 	elif is_one_pair(sorted):

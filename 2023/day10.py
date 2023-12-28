@@ -1,4 +1,4 @@
-# Day 10
+# https://adventofcode.com/2023/day/10
 
 import re
 import numpy as np
@@ -71,4 +71,4 @@ print(max(max(row) for row in dists))
 # 	for x in range(width):
 # 		dist = dists[y][x]
 # 		print(".".ljust(space) if dist == -1 else str(dist).ljust(space), end="")
-# 	print("\n")	
+# 	print("\n")

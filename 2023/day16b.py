@@ -1,4 +1,4 @@
-# Day 16
+# https://adventofcode.com/2023/day/16
 
 import numpy as np
 
@@ -71,7 +71,7 @@ def get_energy(start_ray):
 
 	while(len(rays) > 0):
 		ray = rays.pop()
-		
+
 		while(True):
 			next = ray[0] + ray[1]
 
@@ -106,6 +106,6 @@ for y in range(h):
 for y in range(w):
 	max_energy = max(max_energy, get_energy([np.array([y, -1]), np.array([0, 1])]))
 	max_energy = max(max_energy, get_energy([np.array([y, h]), np.array([0, -1])]))
-	
+
 
 print(max_energy)

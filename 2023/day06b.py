@@ -1,4 +1,4 @@
-# Day 6
+# https://adventofcode.com/2023/day/6
 
 import re
 import numpy as np
@@ -22,11 +22,11 @@ max = time
 
 while True:
 	mid = (min + max) // 2
-	
+
 	if get_dist(time, mid) <= max_dist and get_dist(time, mid + 1) > max_dist:
 		min_improve = mid + 1
 		break
-	
+
 	if get_dist(time, mid) <= max_dist:
 		min = mid
 	else:
@@ -38,11 +38,11 @@ max = time
 
 while True:
 	mid = (min + max) // 2
-	
+
 	if get_dist(time, mid) <= max_dist and get_dist(time, mid - 1) > max_dist:
 		max_improve = mid - 1
 		break
-	
+
 	if get_dist(time, mid) <= max_dist:
 		max = mid
 	else:

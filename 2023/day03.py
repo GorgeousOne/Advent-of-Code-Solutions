@@ -1,10 +1,10 @@
-# Day 3
+# https://adventofcode.com/2023/day/3
 import re
 
 not_symbols = ".1234567890"
 
 def has_symbol_neighbor(y, x_start, x_end, text):
-	
+
 	# print(max(0, y-1), min(len(text) - 1, y+2))
 	# print(max(0, x_start-1), min(len(text[0]) - 1, x_end+1))
 

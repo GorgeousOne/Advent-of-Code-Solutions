@@ -1,4 +1,4 @@
-# Day 19
+# https://adventofcode.com/2023/day/19
 import operator
 
 import re
@@ -76,7 +76,7 @@ for part in parts:
 		if current_flow == "R":
 			rejected.append(part)
 			break
-		
+
 		rules = flows[current_flow]
 
 		for rule in rules:

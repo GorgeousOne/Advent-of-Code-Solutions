@@ -1,4 +1,4 @@
-# Day 19
+# https://adventofcode.com/2023/day/19
 import numpy as np
 import copy
 
@@ -82,7 +82,7 @@ while len(remaining) > 0:
 		continue
 	if flow == "R":
 		continue
-	
+
 	# print("---", flow, "---")
 	rules = flows[flow]
 	current = part
@@ -101,5 +101,5 @@ while len(remaining) > 0:
 			current = divided[1]
 		else:
 			break
-	
+
 print(accepted)

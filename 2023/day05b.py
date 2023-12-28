@@ -1,4 +1,4 @@
-# Day 5
+# https://adventofcode.com/2023/day/5
 
 import re
 import numpy as np
@@ -28,7 +28,7 @@ def split_seeds(seeds, seed, j, mapping):
 		# print("new", seed_copy[j])
 	# else:
 		# print(seed[j][1], "<=", mapping[1])
-	
+
 	seed[j+1] = [(val + mapping[2]) for val in seed[j]]
 	# print()
 
@@ -40,7 +40,7 @@ seeds = []
 seed_ranges = get_nums(text[0].split(":")[1])
 
 for i in range(0, len(seed_ranges), 2):
-	seeds.append([[seed_ranges[i], seed_ranges[i] + seed_ranges[i+1] - 1], 
+	seeds.append([[seed_ranges[i], seed_ranges[i] + seed_ranges[i+1] - 1],
 			  [-1, -1],
 			  [-1, -1],
 			  [-1, -1],
@@ -48,7 +48,7 @@ for i in range(0, len(seed_ranges), 2):
 			  [-1, -1],
 			  [-1, -1],
 			  [-1, -1]])
-	
+
 # print(len(seeds), "seeds")
 # print("\n".join([str(seed) for seed in seeds]))
 

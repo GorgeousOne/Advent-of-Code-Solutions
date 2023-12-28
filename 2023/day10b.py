@@ -1,4 +1,4 @@
-# Day 10
+# https://adventofcode.com/2023/day/10
 
 import re
 import numpy as np
@@ -66,7 +66,7 @@ while True:
 		open_end = (neigh_x, neigh_y)
 		prev_dir = pipe
 		break
-	
+
 	if loop_closed:
 		break
 
@@ -95,7 +95,7 @@ for y in range(height):
 				entry = dir[1]
 			else:
 				if dir[1] == entry:
-					intersecs += 1						
+					intersecs += 1
 				entry == 0
 			break
 

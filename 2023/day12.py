@@ -1,4 +1,4 @@
-# Day 12
+# https://adventofcode.com/2023/day/12
 
 import re
 import numpy as np
@@ -67,5 +67,4 @@ for i, pattern in enumerate(patterns):
 	# print(get_pattern_num(row, pattern))
 	sums += get_pattern_num(row, pattern)
 print(sums)
-	
-		
+

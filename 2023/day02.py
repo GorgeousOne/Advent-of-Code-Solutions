@@ -1,9 +1,9 @@
-# Day 2
+# https://adventofcode.com/2023/day/2
 
 config = {
 	"red": 12,
 	"green": 13,
-	"blue": 14 
+	"blue": 14
 }
 
 # with open("day02_input copy.txt") as file:
@@ -18,7 +18,7 @@ for line in text:
 	grab_texts = line.split(";")
 
 	for grab_text in grab_texts:
-		
+
 		dice_texts = grab_text.split(",")
 		dice = {}
 

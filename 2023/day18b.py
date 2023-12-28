@@ -1,4 +1,4 @@
-# Day 18
+# https://adventofcode.com/2023/day/18
 
 import re
 import numpy as np
@@ -17,7 +17,7 @@ class YLine:
 		return self.y_min <= y and self.y_max >= y
 
 	# def intersect_type(self, y):
-		# if 
+		# if
 
 dirs = {
 	"0": np.array([1, 0]),
@@ -38,10 +38,10 @@ for i, line in enumerate(text):
 
 	if dir[0] == 0:
 		lagoon.append(YLine(current[0], current[1], next[1]))
-	
+
 	print(current, next)
 	current = next
-	
+
 
 print("trench", len(lagoon))
 ends = [np.array([1, 1])]
@@ -56,7 +56,7 @@ bay_area = 0
 y_steps = set(line.y_min for line in lagoon)
 y_steps.add(y_end + 1)
 y_steps = sorted(list(y_steps))
-				 
+
 for i, y in enumerate(y_steps[:-1]):
 	print("---", y, "---")
 

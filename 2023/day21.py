@@ -1,4 +1,4 @@
-# Day 21
+# https://adventofcode.com/2023/day/21
 
 import re
 import numpy as np
@@ -49,7 +49,7 @@ for i in range(1, steps + 1):
 
 			if garden[next[0], next[1]] == 1:
 				continue
-			
+
 			if next in all_reached:
 				continue
 

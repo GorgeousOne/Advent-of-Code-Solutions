@@ -1,4 +1,4 @@
-# Day 13
+# https://adventofcode.com/2023/day/13
 
 # with open("day13_input copy.txt") as file:
 with open("day13_input.txt") as file:
@@ -65,6 +65,6 @@ for i in range(len(pattern_cols)):
 		sums += mirror_x + 1
 	else:
 		print("meh", i)
-	
+
 print(sums)
 

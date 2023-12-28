@@ -1,4 +1,4 @@
-# Day 17
+# https://adventofcode.com/2023/day/17
 
 import numpy as np
 import time
@@ -13,6 +13,7 @@ w = len(text[0])
 h = len(text)
 
 heat = np.zeros((w, h), dtype=int)
+
 for y, line in enumerate(text):
 	for x, letter in enumerate(line):
 		heat[x, y] = int(letter)
@@ -30,6 +31,7 @@ class Path:
 		return "".join([str(heat[x[0], x[1]]) for x in reversed(self.steps)])
 
 losses = np.full((w, h), 99999)
+
 display = np.full((w, h), ".")
 display[w-1, h-1] = "O"
 
@@ -54,11 +56,11 @@ while(len(paths) > 0):
 	for dir in dirs:
 		if len(current.last_dirs) > 2 and all(np.array_equal(dir, x) for x in current.last_dirs[:3]):
 			continue
-		neigh = current.steps[0] + dir 
+		neigh = current.steps[0] + dir
 
 		if not is_in_grid(neigh) or any(np.array_equal(neigh, x) for x in current.steps):
 			continue
-		
+
 		old_loss = losses[neigh[0], neigh[1]]
 		new_loss = current.loss + heat[neigh[0], neigh[1]]
 
@@ -76,7 +78,7 @@ while(len(paths) > 0):
 			solution = clone
 			is_done = True
 			break
-	
+
 	if is_done:
 		break
 

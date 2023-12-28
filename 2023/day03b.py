@@ -1,4 +1,4 @@
-# Day 3
+# https://adventofcode.com/2023/day/3
 import re
 
 def is_gear_neighbor(y, x_start, x_end, text):
@@ -13,7 +13,7 @@ def neigh_contains(y, x, neigh):
 	print
 	if y == neigh[0] and x >= neigh[1] and x < neigh[2]:
 		return True
-		
+
 
 def get_gear_neighs(y, x, gear_neighs):
 	neigh_set = []

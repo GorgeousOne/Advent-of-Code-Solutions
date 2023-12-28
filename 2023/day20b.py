@@ -1,4 +1,4 @@
-# Day 20
+# https://adventofcode.com/2023/day/20
 
 import re
 import numpy as np
@@ -19,10 +19,10 @@ class Broadcast(Module):
 
 	def trigger(self, input, high_pulse):
 		return [[self.name, o, high_pulse] for o in self.outputs]
-			
+
 	def __repr__(self):
 		return f"{self.name} -> {', '.join(self.outputs)}"
-	
+
 
 class FlipFlop(Module):
 	def __init__(self, name, outputs) -> None:
@@ -52,7 +52,7 @@ class Conjunction(Module):
 
 	def __repr__(self):
 		return f"&{self.name} -> {', '.join(self.outputs)}"
-	
+
 
 modules = {}
 

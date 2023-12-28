@@ -1,4 +1,4 @@
-# Day 16
+# https://adventofcode.com/2023/day/16
 
 import numpy as np
 
@@ -61,7 +61,7 @@ energized = set()
 
 while(len(rays) > 0):
 	ray = rays.pop()
-	
+
 	while(True):
 		next = ray[0] + ray[1]
 

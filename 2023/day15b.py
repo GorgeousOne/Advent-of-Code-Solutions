@@ -1,4 +1,4 @@
-# Day 15
+# https://adventofcode.com/2023/day/15
 
 import re
 import numpy as np
@@ -18,13 +18,13 @@ for i, line in enumerate(text):
 	else:
 		label = line[:-2]
 		focal = int(line[-1])
-		
+
 	hashy = 0
 	for x in label:
 		hashy += ord(x)
 		hashy *= 17
 		hashy %= 256
-	
+
 	box = boxes[hashy]
 
 	if is_remove:

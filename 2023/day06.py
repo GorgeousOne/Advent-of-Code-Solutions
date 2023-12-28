@@ -1,4 +1,4 @@
-# Day 6
+# https://adventofcode.com/2023/day/6
 
 import re
 import numpy as np
