@@ -49,13 +49,17 @@ while True:
 		print(i, loss, len(queue.pq))
 	i += 1
 
-	if x == w-1 and y == h-1:
+	if x == w-1 and y == h-1 and consecutive >= 4:
 		print(loss)
 		exit()
 
-	new_dirs = [((last_dir + 1) % 4, 1), ((last_dir - 1) % 4, 1)]
+	new_dirs = []
 
-	if consecutive < 3:
+	if consecutive >= 4:
+		new_dirs.append(((last_dir + 1) % 4, 1))
+		new_dirs.append(((last_dir - 1) % 4, 1))
+
+	if consecutive < 10:
 		new_dirs.append((last_dir, consecutive + 1))
 
 	for new_dir, new_consecutive in new_dirs:
