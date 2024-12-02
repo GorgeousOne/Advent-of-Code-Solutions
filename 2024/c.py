@@ -9,13 +9,13 @@ else:
 	day = sys.argv[1]
 
 try:
-	day_int = int(day)
+	day_int = str(day).zfill(2)
 except ValueError:
 	print("The provided day number is not an integer.")
 	sys.exit(1)
 
-source_file = f"day{day_int}.py"
-destination_file = f"day{day_int}b.py"
+source_file = f"{day_int}.py"
+destination_file = f"{day_int}b.py"
 
 if os.path.isfile(destination_file):
 	print(f"The file {destination_file} already exists.")

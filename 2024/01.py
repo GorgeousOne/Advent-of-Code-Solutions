@@ -1,5 +1,4 @@
 
-# ~ 6:10 am
 # with open("01test.txt", "r") as f:
 with open("01input.txt", "r") as f:
 	text = f.read().splitlines()
