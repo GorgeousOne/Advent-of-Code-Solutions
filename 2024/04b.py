@@ -1,3 +1,10 @@
+"""
+find all
+M S
+ A
+M S
+shapes (forwards, backwards)
+"""
 
 # with open("04test.txt", "r") as f:
 with open("04input.txt", "r") as f:

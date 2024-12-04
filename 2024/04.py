@@ -1,3 +1,6 @@
+"""
+find all XMASs horizonontal, vertical, diagonal, forwards, backwards
+"""
 
 # with open("04test.txt", "r") as f:
 with open("04input.txt", "r") as f:

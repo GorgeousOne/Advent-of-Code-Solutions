@@ -1,3 +1,7 @@
+"""
+find all mul(#, #) operations and sum their results
+"""
+
 import re
 
 # with open("03test.txt", "r") as f:

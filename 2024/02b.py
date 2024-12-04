@@ -1,3 +1,8 @@
+"""
+check if each row is always in/decreasing numbers
+with max in/decrease 3
+you are allowed to remove 1 element to make it work
+"""
 
 # with open("02test.txt", "r") as f:
 with open("02input.txt", "r") as f:

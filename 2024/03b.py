@@ -1,8 +1,8 @@
+"""
+find all mul(#, #) operations and sum their results
+only count them if most recently there was a 'do()' and no 'don't()'
+"""
 import re
-
-# split the text by 'do()'s, then split each subtext by 'dont()'s
-# then only add up the 'mul(#,#)'s in each first sub-sub-text enabled by a 'do()'
-# because the other sub-sub-texts will be disabled by a 'dont()'
 
 # with open("03test.txt", "r") as f:
 with open("03input.txt", "r") as f:

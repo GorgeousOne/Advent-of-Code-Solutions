@@ -1,3 +1,7 @@
+"""
+sum the differences for 1s lowest pair, 2nd lowest pair...
+in both lists
+"""
 
 # with open("01test.txt", "r") as f:
 with open("01input.txt", "r") as f:

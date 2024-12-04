@@ -1,3 +1,6 @@
+"""
+sum all (x from list1) * (occurences x in list2)
+"""
 
 # with open("01test.txt", "r") as f:
 with open("01input.txt", "r") as f:
