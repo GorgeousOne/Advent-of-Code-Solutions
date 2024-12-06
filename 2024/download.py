@@ -37,4 +37,7 @@ if __name__ == '__main__':
 	with open(f'{day:02}input.txt', 'w', encoding='utf-8') as f:
 		f.write(puzzle_input)
 	num_lines = puzzle_input.count('\n')
+
+	import setup
+	setup.setup_day(day)
 	print(f'Downloaded {num_lines} lines of input for day {day}')
