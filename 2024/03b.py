@@ -1,5 +1,6 @@
 """
-find all mul(#, #) operations and sum their results
+https://adventofcode.com/2024/day/3
+find all mul(#,#) operations in the input and sum their results
 only count them if most recently there was a 'do()' and no 'don't()'
 """
 import re

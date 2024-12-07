@@ -1,4 +1,5 @@
 """
+https://adventofcode.com/2024/day/4
 find all XMASs horizonontal, vertical, diagonal, forwards, backwards
 """
 

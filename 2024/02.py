@@ -1,4 +1,5 @@
 """
+https://adventofcode.com/2024/day/2
 check if each row is always in/decreasing numbers
 with max in/decrease 3
 """

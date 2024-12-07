@@ -1,4 +1,5 @@
 """
+https://adventofcode.com/2024/day/1
 sum all (x from list1) * (occurences x in list2)
 """
 

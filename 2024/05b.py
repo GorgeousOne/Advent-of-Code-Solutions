@@ -1,6 +1,7 @@
 """
+https://adventofcode.com/2024/day/5
 sort all rows (lower input) where an y is listed before an x
-given by the x|y rules (upper input) so that each row
+given by the 'x|y' rules (upper input) so that each row
 satisfies all rules
 """
 from collections import defaultdict

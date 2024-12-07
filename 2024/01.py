@@ -1,4 +1,5 @@
 """
+https://adventofcode.com/2024/day/1
 sum the differences for 1s lowest pair, 2nd lowest pair...
 in both lists
 """

@@ -1,4 +1,5 @@
 """
+https://adventofcode.com/2024/day/5
 find all rows (lower input) where no y is listed before an x
 given by the x|y rules (upper input)
 """
