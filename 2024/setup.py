@@ -4,21 +4,17 @@ template_code = '''"""
 https://adventofcode.com/2024/day/{d}
 
 """
-import defaultdict
 import re
 import numpy as np
+from collections import defaultdict
 
 with open("{day}test.txt", "r") as f:
 #with open("{day}input.txt", "r") as f:
 	t = f.read().splitlines()
 
-#l1 = [int(l) for l in t]
-#for x in l1:
-
-#l1 = []
-#for l in t:
-#	c = l.split()
-#	l1.append()
+# for y, l in enumerate(t):
+# 	for x, c in enumerate(l):
+# for l in t:
 '''
 
 def setup_day(i):
@@ -31,4 +27,4 @@ def setup_day(i):
 	if not os.path.isfile(day_name + 'test.txt'):
 		open(day_name + 'test.txt', 'a', encoding='utf-8').close()
 
-setup_day(6)
+setup_day(8)
