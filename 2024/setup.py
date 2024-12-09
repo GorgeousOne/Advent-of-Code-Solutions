@@ -1,4 +1,5 @@
 import os.path
+import sys
 
 template_code = '''"""
 https://adventofcode.com/2024/day/{d}
@@ -27,4 +28,20 @@ def setup_day(i):
 	if not os.path.isfile(day_name + 'test.txt'):
 		open(day_name + 'test.txt', 'a', encoding='utf-8').close()
 
-setup_day(8)
+if __name__ == '__main__':
+	if len(sys.argv) != 2:
+		import datetime
+		day = datetime.datetime.now().day
+	else:
+		day = sys.argv[1]
+
+	try:
+		day = int(day)
+	except ValueError:
+		print('Day must be an integer')
+		sys.exit(1)
+	if day < 1 or day > 25:
+		print('Day must be between 1 and 25')
+		sys.exit(1)
+
+	setup_day(day)
